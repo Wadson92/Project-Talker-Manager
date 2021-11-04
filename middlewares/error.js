@@ -1,3 +1,4 @@
 module.exports = (err, _req, res, _next) => {
-  res.status(404).send({ message: 'Pessoa palestrante não encontrada' });
+  console.log('caiu aqui');
+  res.status(400).send({ message: err.message });
 };

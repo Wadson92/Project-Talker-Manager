@@ -11,6 +11,7 @@ const validateAge = require('./middlewares/validaeAge');
 const validateTalk = require('./middlewares/validateTalk');
 const validateTalker = require('./middlewares/validateTalker');
 const updateTalker = require('./controllers/updateTalkers');
+const deleteTalker = require('./middlewares/deleteTalker');
 
 const app = express();
 app.use(bodyParser.json());
@@ -36,6 +37,7 @@ app.put(
   validateTalk,
   updateTalker,
 );
+app.delete('/talker/:id', deleteTalker);
 
 app.use(error);
 

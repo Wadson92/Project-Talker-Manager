@@ -37,7 +37,7 @@ app.put(
   validateTalk,
   updateTalker,
 );
-app.delete('/talker/:id', deleteTalker);
+app.delete('/talker/:id', auth, deleteTalker);
 
 app.use(error);
 
